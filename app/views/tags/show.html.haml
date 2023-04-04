@@ -3,9 +3,12 @@
 
 - content_for :header_tags do
   %meta{ name: 'robots', content: 'noindex' }/
+  %link{ rel: 'stylesheet', type: 'text/css', href: "https://hwl.li/theme/toots/app/app.css" }/
   %link{ rel: 'alternate', type: 'application/rss+xml', href: tag_url(@tag, format: 'rss') }/
 
   = render 'og'
+
+.bg-profile
 
 .page-header
   %h1= "##{@tag.display_name}"

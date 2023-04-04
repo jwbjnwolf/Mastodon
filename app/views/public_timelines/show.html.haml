@@ -3,6 +3,7 @@
 
 - content_for :header_tags do
   %meta{ name: 'robots', content: 'noindex' }/
+  %link{ rel: 'stylesheet', type: 'text/css', href: "https://hwl.li/theme/toots/app/app.css" }/
 
 .page-header
   %h1= t('about.see_whats_happening')
@@ -11,6 +12,8 @@
     %p= t('about.browse_public_posts')
   - else
     %p= t('about.browse_local_posts')
+    
+.bg-profile
 
 #mastodon-timeline{ data: { props: Oj.dump(default_props.merge(local: !Setting.show_known_fediverse_at_about_page)) }}
 .notranslate#modal-container
