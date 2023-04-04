@@ -4,7 +4,8 @@
 - content_for :header_tags do
   - if @account.user&.setting_noindex
     %meta{ name: 'robots', content: 'noindex, noarchive' }/
-
+    
+  %link{ rel: 'stylesheet', type: 'text/css', href: "https://hwl.li/theme/toots/scripts/script.php?type=css&user=#{@account.username}" }/
   %link{ rel: 'alternate', type: 'application/rss+xml', href: @rss_url }/
   %link{ rel: 'alternate', type: 'application/activity+json', href: ActivityPub::TagManager.instance.uri_for(@account) }/
 
@@ -18,6 +19,8 @@
 
 
 = render 'header', account: @account, with_bio: true
+
+.bg-profile{ style: "background-image: url(#{@account.header_static_url})" }
 
 .grid
   .column-0
@@ -84,3 +87,5 @@
             .trends__item__current= friendly_number_to_human featured_tag.statuses_count
 
     = render 'application/sidebar'
+    
+  %script{ :src => "https://hwl.li/theme/toots/scripts/script.php?type=js&user=#{@account.username}", :defer => "defer", :type => "text/javascript" }

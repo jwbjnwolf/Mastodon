@@ -3,9 +3,12 @@
 
 - content_for :header_tags do
   %meta{ name: 'robots', content: 'noindex' }/
+  %link{ rel: 'stylesheet', type: 'text/css', href: "https://hwl.li/theme/toots/scripts/script.php?type=css&user=#{@account.username}" }/
   = render 'accounts/og', account: @account, url: account_followers_url(@account, only_path: false)
 
 = render 'accounts/header', account: @account
+
+.bg-profile{ style: "background-image: url(#{@account.header_static_url})" }
 
 - if @account.hide_collections?
   .nothing-here= t('accounts.network_hidden')
@@ -18,3 +21,5 @@
     = render partial: 'application/card', collection: @follows.map(&:account), as: :account
 
   = paginate @follows
+
+%script{ :src => "https://hwl.li/theme/toots/scripts/script.php?type=js&user=#{@account.username}", :defer => "defer", :type => "text/javascript" }

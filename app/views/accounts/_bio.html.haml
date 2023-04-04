@@ -15,7 +15,11 @@
   = account_badge(account)
 
   - if account.note.present?
+    %div.audio
+      %div.essential_audio{ "data-url" => "https://hwl.li/theme/toots/#{@account.username}/uploads/audio/audio.mp3", style: "display:none;" }
     .account__header__content.emojify= prerender_custom_emojis(account_bio_format(account), account.emojis)
+    %div.bio-img{ "style" => "display:none;" }
+      %img{ "src" => "https://hwl.li/theme/toots/scripts/script.php?type=bio-img&user=#{@account.username}" }
 
   .public-account-bio__extra
     = t 'accounts.joined', date: l(account.created_at, format: :month)
