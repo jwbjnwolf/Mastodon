@@ -6,7 +6,7 @@ import { useEmoji } from './emojis';
 import { tagHistory } from '../settings';
 import { recoverHashtags } from 'flavours/glitch/utils/hashtag';
 import resizeImage from 'flavours/glitch/utils/resize_image';
-import { importFetchedAccounts } from './importer';
+import { importFetchedAccounts, importFetchedStatus } from './importer';
 import { updateTimeline } from './timelines';
 import { showAlertForError } from './alerts';
 import { showAlert } from './alerts';
@@ -220,6 +220,10 @@ export function submitCompose(routerHistory) {
           dispatch(updateTimeline(timelineId, { ...response.data }));
         }
       };
+
+      if (statusId) {
+        dispatch(importFetchedStatus({ ...response.data }));
+      }
 
       if (statusId === null) {
         insertIfOnline('home');
