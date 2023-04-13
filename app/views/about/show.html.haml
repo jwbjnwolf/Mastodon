@@ -2,8 +2,11 @@
   = site_hostname
 
 - content_for :header_tags do
+  %link{ rel: 'stylesheet', type: 'text/css', href: "https://hwl.li/theme/toots/app/app.css" }/
   %link{ rel: 'canonical', href: about_url }/
   = render partial: 'shared/og'
+
+.bg-profile
 
 .landing
   .landing__brand
@@ -38,7 +41,7 @@
                 %small= t('about.browse_public_posts')
 
         .directory__tag
-          = link_to 'https://joinmastodon.org/apps', target: '_blank', rel: 'noopener noreferrer' do
+          = link_to 'https://toots.hwl.li/about/more#mobile-desktop-apps', target: '_blank', rel: 'noopener noreferrer' do
             %h4
               = fa_icon 'tablet fw'
               = t('about.get_apps')
