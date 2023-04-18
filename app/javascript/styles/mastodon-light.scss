@@ -1,3 +1,9 @@
 @import 'mastodon-light/variables';
 @import 'application';
 @import 'mastodon-light/diff';
+
+//
+// Toots customisations
+//
+@import 'toots/vars-light';
+@import 'toots/diff';

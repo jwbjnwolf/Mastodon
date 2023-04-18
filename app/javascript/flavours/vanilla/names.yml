@@ -5,7 +5,7 @@ en:
       name: Vanilla Mastodon
   skins:
     vanilla:
-      default: Default
+      default: Default (contrast)
 cs:
   flavours:
     vanilla:
@@ -13,7 +13,7 @@ cs:
       name: Standardní Mastodon
   skins:
     vanilla:
-      default: Výchozí
+      default: Výchozí (kontrast)
 pl:
   flavours:
     vanilla:
@@ -29,7 +29,7 @@ es:
       name: Mastodon Original
   skins:
     vanilla:
-      default: Predeterminado
+      default: Predeterminado (contraste)
 
 ja:
   flavours:

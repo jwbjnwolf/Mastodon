@@ -1,0 +1,14 @@
+//
+// Toots Customisations
+// 
+
+// Long admin display name fix
+.about__meta .display-name { max-width: 45vw; }
+
+// About page
+.about__section__body { border: unset;
+  a, summary:hover h2, summary:hover strong { color: $primary-link-color; text-decoration: none; }
+  a:hover { color: $highlight-link-color; }
+  summary h2, summary strong { cursor: pointer; display: inline-block; margin: .5em 0; }
+  details details { padding-left: 1em; }
+}
